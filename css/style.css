@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f4f6fb;
+}
+
+body {
+    min-height: 100vh;
+    background: #f4f6fb;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    width: min(100% - 32px, 950px);
+    margin: 40px auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #666;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 15px;
+    background: #4f46e5;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+}
+
+.theme-button {
+    background: #222;
+    white-space: nowrap;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.stat-card,
+.task-form,
+.task-section {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgb(0 0 0 / 5%);
+}
+
+.stat-card h3 {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+.task-form {
+    margin-bottom: 25px;
+}
+
+.task-form h2,
+.task-section h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 14px 0 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d8e0;
+    border-radius: 7px;
+    background: white;
+    color: #222;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.secondary-button {
+    background: #6b7280;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.message {
+    margin-bottom: 12px;
+    color: #4f46e5;
+    font-size: 14px;
+}
+
+.message:empty {
+    display: none;
+}
+
+.task-list {
+    display: grid;
+    gap: 12px;
+}
+
+.task-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid #e2e5ec;
+    border-radius: 9px;
+}
+
+.task-card.completed .task-title {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-title {
+    overflow-wrap: anywhere;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.task-category {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: #eef2ff;
+    color: #4338ca;
+    font-size: 12px;
+}
+
+.task-date {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.task-actions button {
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.complete-button {
+    background: #16a34a;
+}
+
+.edit-button {
+    background: #d97706;
+}
+
+.delete-button {
+    background: #dc2626;
+}
+
+.empty-message {
+    padding: 25px 10px;
+    text-align: center;
+    color: #777;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Dark mode */
+
+body.dark {
+    background: #151923;
+    color: #f3f4f6;
+}
+
+body.dark .stat-card,
+body.dark .task-form,
+body.dark .task-section {
+    background: #222735;
+}
+
+body.dark .header p,
+body.dark .stat-card h3 {
+    color: #b8becb;
+}
+
+body.dark input,
+body.dark select {
+    background: #151923;
+    color: #f3f4f6;
+    border-color: #454c5e;
+}
+
+body.dark .task-card {
+    border-color: #454c5e;
+}
+
+body.dark .task-category {
+    background: #34345c;
+    color: #c7d2fe;
+}
+
+body.dark .task-date,
+body.dark .empty-message {
+    color: #b8becb;
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    .container {
+        margin: 22px auto;
+    }
+
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 14px 10px;
+    }
+
+    .stat-card h3 {
+        font-size: 12px;
+    }
+
+    .stat-card p {
+        font-size: 23px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .task-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .task-actions {
+        width: 100%;
+    }
+}
